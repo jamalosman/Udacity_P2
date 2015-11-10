@@ -23,7 +23,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
   <!-- Load the page styles. -->
   <link href="css/style.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
   <!--
   jQuery is a common JavaScript library for reading and making changes to the
   Document Object Model (DOM). The DOM is a tree that contains information
@@ -46,20 +47,19 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   Uncomment the <script> tag below when you're ready to add an interactive
   Google Map to your resume!
   -->
-<!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> -->
+ <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
   <meta name="viewport" content="width=device-width">
 </head>
 <body>
   <div id="main">
-    Hello world!   <!-- You'll be deleting this line in the course -->
-
     <!--
     Everything from here to the <script> tag below is the skeleton of your
     website. Your code will add information to each of the sections of the
     resume below. You can pretty easily figure out what each section will
     display by looking at the id or at what's written between the <h2> tags.
     -->
+          <canvas id="header-canvas"></canvas>
     <div id="header" class="center-content clear-fix">
       <ul id="topContacts" class="flex-box"></ul>
     </div>
@@ -99,6 +99,13 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   course.
   -->
 
+
+
+  <!-- http://tympanus.net/codrops/2014/09/23/animated-background-headers/ -->
+    <script src="js/TweenLite.min.js"></script>
+    <script src="js/EasePack.min.js"></script>
+    <script src="js/rAF.js"></script>
+    <script src="js/demo-1.js"></script>
   <script type="text/javascript">
     // Notice how all of a sudden there's JavaScript inside this HTML
     // document? You can write JavaScript between <script> tags. At the end of your
@@ -114,27 +121,53 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     */
 
 
-    if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('topContacts').style.display = 'none';
-    }
-    if(document.getElementsByTagName('h1').length === 0) {
-      document.getElementById('header').style.display = 'none';
-    }
-    if(document.getElementsByClassName('work-entry').length === 0) {
-      document.getElementById('workExperience').style.display = 'none';
-    }
-    if(document.getElementsByClassName('project-entry').length === 0) {
-      document.getElementById('projects').style.display = 'none';
-    }
-    if(document.getElementsByClassName('education-entry').length === 0) {
-      document.getElementById('education').style.display = 'none';
-    }
-    if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('lets-connect').style.display = 'none';
-    }
-    if(document.getElementById('map') === null) {
-      document.getElementById('mapDiv').style.display = 'none';
-    }
+
+
+/*
+
+
+
+//    for (var i = 0; i < bio.skills.length; i++) {
+//      formattedSkills[i] = HTMLskills.replace("%data%",bio.skills[i]);
+//    };
+
+    $("#main").prepend(foramttedPicture);
+    $("#main").prepend(formattedWelcomeMsg);
+//    $("#workExperience").prepend(skillsList);
+//    for (var i = 0; i < formattedSkills.length; i++) {
+//      $("#skills").append(formattedSkills[i]);
+//    };
+    $("#main").prepend(formattedRole);
+    $("#main").prepend(formattedName);
+
+    $("#main").append(work["position"]);
+    $("#main").append(education.name);
+*/
+
+
+
+
+    // if(document.getElementsByClassName('flex-item').length === 0) {
+    //   document.getElementById("topContacts").style.display = "none";
+    // }
+    // if(document.getElementsByTagName('h1').length === 0) {
+    //   document.getElementById('header').style.display = "none";
+    // }
+    // if(document.getElementsByClassName('work-entry').length === 0) {
+    //   document.getElementById('workExperience').style.display = "none";
+    // }
+    // if(document.getElementsByClassName('project-entry').length === 0) {
+    //   document.getElementById('projects').style.display = "none";
+    // }
+    // if(document.getElementsByClassName('education-entry').length === 0) {
+    //   document.getElementById('education').style.display = "none";
+    // }
+    // if(document.getElementsByClassName('flex-item').length === 0) {
+    //   document.getElementById('lets-connect').style.display = "none";
+    // }
+    // if(document.getElementById('map') === null) {
+    //   document.getElementById('mapDiv').style.display = "none";
+    // }
   </script>
 </body>
 </html>

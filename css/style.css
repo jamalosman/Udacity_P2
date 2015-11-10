@@ -26,7 +26,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #4df;
   line-height: 48px;
   display: inline;
 }
@@ -100,7 +100,7 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #4df;
   display: none;
 }
 
@@ -109,7 +109,7 @@ a {
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #4df;
 }
 
 .white-text {
@@ -129,7 +129,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #38495a;
 }
 
 .flex-box {
@@ -154,6 +154,15 @@ ul {
   padding: 10px;
   width: 200px;
   display: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.biopic:hover {
+  -moz-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 img {
@@ -162,6 +171,7 @@ img {
 
 span {
   padding: 5px;
+  color: #ccc;
 }
 
 #lets-connect {
