@@ -100,9 +100,9 @@ projects.display = function(){
 			HTMLprojectTitle.replace("%data%", projects.projects[proj].title) +
 			HTMLprojectDates.replace("%data%", projects.projects[proj].dates) +
 			HTMLprojectDescription.replace("%data%", projects.projects[proj].description));
-		for (image in projects.projects[proj].images) {
+		for (var i = 0; i < projects.projects[proj].images.length; i++) {
 			$(".project-entry:last").append(
-				HTMLprojectImage.replace("%data%", projects.projects[proj].images[image]));
+				HTMLprojectImage.replace("%data%", projects.projects[proj].images[i]));
 		};
 	}
 }
@@ -144,12 +144,20 @@ education.display = function(){
 			HTMLschoolDegree.replace("%data%", education.schools[school].degree) +
 			HTMLschoolLocation.replace("%data%", education.schools[school].location) +
 			HTMLschoolDates.replace("%data%", education.schools[school].dates));
-		for (major in education.schools[school].majors) {
+		for (var i = 0; i < education.schools[school].majors.length; i++) {
 			$(".education-entry:last").append(
-				HTMLschoolMajor.replace("%data%", education.schools[school].majors[major]));
+				HTMLschoolMajor.replace("%data%", education.schools[school].majors[i]));
 		};
 
 	}
+}
+
+
+function inName(name){
+	var bothNames = name.trim().split(" ");
+	var firstName = bothNames[0].slice(0,1).toUpperCase() + bothNames[0].slice(1);
+	var lastName = bothNames[1].toUpperCase();
+	return firstName + " " + lastName;
 }
 
 projects.display();
@@ -164,14 +172,6 @@ bio.display();
 
 
 
-
-
-function inName(name){
-	var bothNames = name.trim().split(" ");
-	var firstName = bothNames[0].slice(0,1).toUpperCase() + bothNames[0].slice(1);
-	var lastName = bothNames[1].toUpperCase();
-	return firstName + " " + lastName;
-}
 
 $("#main").append(internationalizeButton);
 
