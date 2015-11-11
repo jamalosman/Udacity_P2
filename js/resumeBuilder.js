@@ -7,13 +7,13 @@ var bio = {
 		"location" : "142-146 Trafalgar Rd, London SE10 9TZ"
 	},
 	"pictureUrl" : "images/jamal.jpg",
-	"welcomeMsg" : "I'm a reliable IT professional.",
+	"welcomeMessage" : "I'm a reliable IT professional.",
 	"skills" : ["HTML","CSS","JavaScript","C#","ASP.NET","Web Development"]
 }
 
 bio.display = function(){
-	var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
-	$("#header").prepend(formattedWelcomeMsg);
+	var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+	$("#header").prepend(formattedWelcomeMessage);
 
 	var formattedPicture = HTMLbioPic.replace("%data%", bio.pictureUrl);
 	$("#header").prepend(formattedPicture);
@@ -32,7 +32,6 @@ bio.display = function(){
 	$("#topContacts").append(formattedEmail);
 	$("#topContacts").append(formattedMobile);
 
-	var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
 	var skillsList = HTMLskillsStart;
 	var formattedSkills = [];
 	if (bio.skills.length > 0){
@@ -114,7 +113,7 @@ var education = {
 		"name" : "University of Greenwich",
 		"degree" : "BSc Computer Science",
 		"location" : "30 Park Row, London, SE10 9LS",
-		"subjects" : ["Web Development","Mobile Development","Software Design"],
+		"majors" : ["Web Development","Mobile Development","Software Design"],
 		"dates" : "01-09-2012 - 01-06-2015",
 		"url" : "www.gre.ac.uk"
 	},
@@ -122,7 +121,7 @@ var education = {
 		"name" : "Some Form College",
 		"degree" : "A Levels (Mixed)",
 		"location" : "54 High Road, London NW10 2PU",
-		"subjects" : ["Maths", "Computng", "Graphic Design"],
+		"majors" : ["Maths", "Computng", "Graphic Design"],
 		"dates" : "01-09-2009 - 01-06-2011",
 		"url" : "www.someurl.ac.uk"
 	}
@@ -145,9 +144,9 @@ education.display = function(){
 			HTMLschoolDegree.replace("%data%", education.schools[school].degree) +
 			HTMLschoolLocation.replace("%data%", education.schools[school].location) +
 			HTMLschoolDates.replace("%data%", education.schools[school].dates));
-		for (subject in education.schools[school].subjects) {
+		for (major in education.schools[school].majors) {
 			$(".education-entry:last").append(
-				HTMLschoolMajor.replace("%data%", education.schools[school].subjects[subject]));
+				HTMLschoolMajor.replace("%data%", education.schools[school].majors[major]));
 		};
 
 	}
