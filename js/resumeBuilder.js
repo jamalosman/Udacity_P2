@@ -34,7 +34,7 @@ bio.display = function(){
 
 	var skillsList = HTMLskillsStart;
 	var formattedSkills = [];
-	if (bio.skills.length > 0){
+	if (bio.skills.length){
 		$("#header").append(HTMLskillsStart);
 		$("#skills-h3").show();
 		for (var i = 0; i < bio.skills.length; i++) {
